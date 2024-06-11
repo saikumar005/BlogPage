@@ -87,3 +87,42 @@ savePreferencesButton.addEventListener('click', () => {
   // Inject tracking code based on selected options (replace with actual implementation)
   selectedTracking.forEach(code => injectTrackingCode(code));
 });
+
+
+function hasCookie(cookieName,cookieVal) {
+  // Split the cookie string into an array of key-value pairs
+  const cookies = document.cookie.split(';');
+  
+  // Iterate over each cookie pair
+  for (const cookie of cookies) {
+    const [key, value] = cookie.trim().split('=');
+    // Check if the current cookie's name matches the provided name (ignoring whitespace)
+    if (key === cookieName && cookieVal===value) {
+      return true; // Cookie exists
+    }
+  }
+  
+  // If no match is found, return false
+  return false;
+}
+
+// Example usage
+if (hasCookie('cookiesAccepted',"all")) {
+  injectTrackingCode('google-analytics');
+  injectTrackingCode('facebook-pixel');
+  console.log('all cookies exist', "all", 'exists.');
+} 
+else if(hasCookie('cookiesAccepted','google-analytics'))
+  {
+    injectTrackingCode('google-analytics');
+  console.log('google analytics', 'google analytics', ' exist.');
+}
+else if(hasCookie('cookiesAccepted','facebook-pixel'))
+  {
+    injectTrackingCode('facebook-pixel');
+  console.log('facebook code', 'facebook', 'exist.');
+}
+else{
+  console.log('nothing is accepted')
+  cookieConsent.style.display='block';
+}
