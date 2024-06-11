@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Website Name</title>
 
+  <link rel="stylesheet" href="index.css"/>
   <meta property="og:url" content="https://saikumar005.github.io/BlogPage/">
   <meta property="og:title" content="Blogs page home ">
   <meta property="og:description" content="Home page description A brief description of your website and what it offers.">
@@ -16,14 +17,14 @@
   <meta name="twitter:image" content="https://saikumar005.github.io/BlogPage/Images/home.jpg">
   <link rel="stylesheet" href="style.css">
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3M00LYKYCX"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M00LYKYCX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-3M00LYKYCX');
-</script>
+</script> -->
 </head>
 <body>
 
@@ -48,6 +49,20 @@
     <p>&copy; 2024 Your Website Name</p>
   </footer>
 
+  <div id="cookie-consent">
+    <p>We use cookies to improve your experience. Please choose your preference:</p>
+    <div id="tracking-options">
+      <button id="accept-all">Accept All</button>
+      <button id="customize">Customize</button>
+      <button id="reject">Reject All</button>
+    </div>
+    <div id="customize-options" style="display: none;">
+      <p>Select the tracking tools you allow:</p>
+      <input type="checkbox" id="google-analytics" value="google-analytics"> Google Analytics
+      <input type="checkbox" id="facebook-pixel" value="facebook-pixel"> Facebook Pixel
+      <button id="save-preferences">Save Preferences</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
